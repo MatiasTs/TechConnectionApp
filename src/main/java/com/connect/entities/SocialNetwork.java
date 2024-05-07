@@ -5,23 +5,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.util.List;
+import jakarta.persistence.ManyToOne;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @Entity
-public class Contact {
+public class SocialNetwork {
     
-    @GeneratedValue( strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Id
     private String id;
     
-    private String phoneNumber;
-    private String cellphone;
-    private String email;
-    private List<SocialNetwork> socialNetworks;
+    private String name;
+    private String myUserName;
     
-    
+    @ManyToOne
+    private String Contacto;
 }

@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,10 +30,10 @@ public class Professional {
     private ServicesOffered service;
     
     @OneToMany
-    private WorkFinished workFinished;
+    private List<WorkFinished> workFinished;
     
     @OneToMany
-    private Opinions opinions;
+    private List<Opinions> opinions;
     
     private Double hourlyRate;
     
