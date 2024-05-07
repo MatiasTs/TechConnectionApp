@@ -44,7 +44,7 @@ public class User {
     private String userName;
     private String password;
     
-   @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
    
    @OneToOne
