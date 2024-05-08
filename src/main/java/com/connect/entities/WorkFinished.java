@@ -33,5 +33,5 @@ public class WorkFinished {
     private Double price;
     
     @ManyToOne
-    private Professional professional;
+    private Technician technician;
 }

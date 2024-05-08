@@ -21,5 +21,5 @@ public class Opinions {
     private Double score;
     
     @ManyToOne
-    private Professional professional;
+    private Technician technician;
 }

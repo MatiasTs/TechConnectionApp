@@ -19,7 +19,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Professional {
+public class Technician {
     
     @GeneratedValue(strategy = GenerationType.UUID)
     @Id
