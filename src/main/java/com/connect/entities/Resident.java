@@ -19,5 +19,5 @@ public class Resident {
     private String id;
     
     @OneToOne
-    private Domicilio domicilio;
+    private Address address;
 }

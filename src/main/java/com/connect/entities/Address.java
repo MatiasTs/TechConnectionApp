@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Domicilio {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
