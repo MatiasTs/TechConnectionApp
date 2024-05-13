@@ -9,6 +9,7 @@ import com.connect.entities.WorkFinished;
 import com.connect.enums.ServicesOffered;
 import com.connect.repositories.TechnicianRepository;
 import exception.MiException;
+import jakarta.transaction.Transactional;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,7 @@ public class TechnicianService {
     @Autowired
     private UserService userService;
     
+    @Transactional
     public void createTechnician(String name, String password, String confirmPassword, String lastName,String userName,
             Contact contact, String NIC, Date dateOfBird, Image image, Address address,
             ServicesOffered service, List<WorkFinished> works, Double hourlyRate) throws MiException{
@@ -55,6 +57,7 @@ public class TechnicianService {
         
     }
     
+    @Transactional
     public void modifyTechnician(String id, String name, String password, String confirmPassword, String lastName,String userName,
             Contact contact, String NIC, Date dateOfBird, Image image, Address address,
             ServicesOffered service, List<WorkFinished> works, Double hourlyRate) throws MiException{
@@ -90,6 +93,7 @@ public class TechnicianService {
  
     }
     
+    @Transactional
     public void technicianDelete(String id){
         TechnicianRepository.deleteById(id);
     }

@@ -17,12 +17,12 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     
-    private String streetName;
-    private Integer number;
-    private String blockLetter;
+    private String street;
+    private String residentNumber;
+    private String housingType;
     private Integer floor;
-    private String apartNumber;
-    private Integer postalNumber;
+    private String doorNumber;
+    private String postalCode;
     private String city;
     
     @OneToOne
