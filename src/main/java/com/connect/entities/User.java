@@ -43,6 +43,7 @@ public class User {
     private String lastName;
     private String userName;
     private String password;
+    private String NIC;
     
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;

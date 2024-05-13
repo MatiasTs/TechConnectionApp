@@ -11,12 +11,19 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     
+//    public void addUser(String name, String password, String confirmPassword, String lastName,String userName,
+//            Contact contact, String NIC, Date dateOfBird, Image image) throws MiException{
+//        
+//        validation(name, password, confirmPassword, lastName, userName, contact, NIC, dateOfBird, image);
+//        
+//        
+//        
+//    }
     
     
     
     
-    
-    public boolean validacion(String name, String password, String confirmPassword, String lastName,String userName,
+    public void validation(String name, String password, String confirmPassword, String lastName,String userName,
             Contact contact, String NIC, Date dateOfBird, Image image) throws MiException{
         if(name.isEmpty() || name == null){
             throw new MiException("The name cannot be empty or null");
@@ -51,6 +58,5 @@ public class UserService {
         }
         
         
-        return true;
     }
 }

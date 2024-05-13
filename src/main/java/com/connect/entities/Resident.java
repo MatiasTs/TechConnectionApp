@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-public class Resident {
+public class Resident extends User{
     
     @GeneratedValue(strategy = GenerationType.UUID)
     @Id
