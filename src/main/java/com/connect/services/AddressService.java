@@ -62,6 +62,10 @@ public class AddressService {
         
     }
     
+    public void deleteAddress(String id){
+        addressRepo.deleteById(id);
+    }
+    
     public Address searchAddressById(String id){
          Optional<Address> response = addressRepo.findById(id);
         
