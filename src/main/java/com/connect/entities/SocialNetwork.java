@@ -22,5 +22,5 @@ public class SocialNetwork {
     private String myUserName;
     
     @ManyToOne
-    private String Contacto;
+    private Contact Contact;
 }
