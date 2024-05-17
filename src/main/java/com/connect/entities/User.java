@@ -1,4 +1,3 @@
-
 package com.connect.entities;
 
 import com.connect.enums.Roles;
@@ -14,15 +13,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 import java.util.Date;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.GenericGenerator;
 
 @Getter
 @Setter
@@ -34,28 +35,40 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 
 public class User {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String Id;
-    
+
+    @NotBlank(message = "The name cannot be empty")
     private String name;
+    @NotBlank(message = "The last name cannot be empty")
     private String lastName;
+    @NotBlank(message = "The username cannot be empty")
     private String userName;
+
+    @NotBlank(message = "The password cannot be empty")
+    @Size(min = 8, message = "The password must be at least 8 characters long")
     private String password;
+    @NotBlank(message = "The password cannot be empty")
     private String NIC;
-    
+
+    @NotNull(message = "The date of birth cannot be empty")
+    @Past(message = "The date of birth must be a date in the past")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
-   
-   @OneToOne
-   private Image image;
-   
-   @OneToOne
-   private Contact contacto;
-   
-   @Enumerated(EnumType.STRING)
-   @Column(name = "rol")
-   private Roles rol;
-   
+
+    @NotNull(message = "The image cannot be null")
+    @OneToOne
+    private Image image;
+
+    @NotNull(message = "The contact cannot be null")
+    @OneToOne
+    private Contact contacto;
+
+    @NotNull(message = "The rol cannot be null")
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rol")
+    private Roles rol;
+
 }

@@ -31,9 +31,7 @@ public class TechnicianService {
             Contact contact, String NIC, Date dateOfBird, Image image, Address address,
             ServicesOffered service, List<WorkFinished> works, Double hourlyRate) throws MiException{
         
-        userService.validation(name, password, confirmPassword, lastName, userName, contact, NIC, dateOfBird, image);
         
-        techValidation(service, hourlyRate);
         
         Technician technician = new Technician();
         
@@ -62,9 +60,8 @@ public class TechnicianService {
             Contact contact, String NIC, Date dateOfBird, Image image, Address address,
             ServicesOffered service, List<WorkFinished> works, Double hourlyRate) throws MiException{
         
-        userService.validation(name, password, confirmPassword, lastName, userName, contact, NIC, dateOfBird, image);
         
-        techValidation(service, hourlyRate);
+        
         
         Optional<Technician> response = TechnicianRepository.findById(id);
         
@@ -111,13 +108,5 @@ public class TechnicianService {
     }
     
     
-    public void techValidation(ServicesOffered service, Double hourlyRate) throws MiException{
-        if(service == null){
-            throw new MiException("The service oferred cannot be empty");
-        }
-        
-        if(hourlyRate == null){
-            throw new MiException("The hourly rate cannot be empty");
-        }
-    }
+   
 }

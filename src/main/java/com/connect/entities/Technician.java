@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,13 +26,16 @@ public class Technician extends User{
     @Id
     private String id;
     
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "service")
     private ServicesOffered service;
     
+    @NotNull
     @OneToMany
     private List<WorkFinished> workFinished;
     
+    @NotNull
     @OneToMany
     private List<Opinions> opinions;
     

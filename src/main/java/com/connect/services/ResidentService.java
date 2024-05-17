@@ -32,9 +32,7 @@ public class ResidentService {
     public void createResident(String name, String password, String confirmPassword, String lastName,String userName,
             Contact contact, String NIC, Date dateOfBird, Image image, Address address) throws MiException{
         
-        userService.validation(name, password, confirmPassword, lastName, userName, contact, NIC, dateOfBird, image);
         
-        residentValidation(address);
         
         Resident resident = new Resident();
         
@@ -56,9 +54,6 @@ public class ResidentService {
     public void modifyResident(String name, String id,String password, String confirmPassword, String lastName,String userName,
             Contact contact, String NIC, Date dateOfBird, Image image, Address address) throws MiException{
         
-        userService.validation(name, password, confirmPassword, lastName, userName, contact, NIC, dateOfBird, image);
-        
-        residentValidation(address);
         
         Optional<Resident> response = residentRepository.findById(id);
         
@@ -99,12 +94,5 @@ public class ResidentService {
         return residentRepository.residentsOrderByUsername();
     }
     
-    
-    
-    public void residentValidation(Address address) throws MiException{
-        
-        if(address == null){
-            throw new MiException("The address cannot be null");
-        }
-    }
+   
 }
