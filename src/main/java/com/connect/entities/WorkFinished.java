@@ -10,6 +10,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import java.util.Date;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,15 +25,24 @@ public class WorkFinished {
     @Id
     private String id;
     
+    @NotNull(message = "The date of the job cannot be null")
+    @Past(message = "The data of the work done must be a date in the past")
     @Temporal(TemporalType.DATE)
     private Date date;
     
+    @NotNull(message = "The service done cannot be empty")
     @OneToOne
     private ServicesOffered jobDone;
     
+    @NotNull(message = "The hours it took to make the job cannot be null")
     private Double hours;
+    
+    @NotNull(message = "The price the technician charged cannot be empty")
     private Double price;
     
+    @NotNull(message = "The technician who did the work cannot be empty")
     @ManyToOne
     private Technician technician;
+    
+    
 }

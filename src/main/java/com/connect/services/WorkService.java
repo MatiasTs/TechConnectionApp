@@ -21,7 +21,6 @@ public class WorkService {
     public void createWork(Date date, ServicesOffered jobDone, Double hours, Double price,
             Technician technician) throws MiException{
         
-        validation(date, jobDone, hours, price, technician);
         
         WorkFinished work = new WorkFinished();
         
@@ -38,7 +37,6 @@ public class WorkService {
     public void modifyWork(String id, Date date, ServicesOffered jobDone, Double hours, Double price,
             Technician technician) throws MiException{
         
-        validation(date, jobDone, hours, price, technician);
         
         Optional<WorkFinished> response = workRepo.findById(id);
         if(response.isPresent()){
@@ -69,25 +67,4 @@ public class WorkService {
     }
     
     
-    
-    public void validation(Date date, ServicesOffered jobDone, Double hours, Double price,
-            Technician technician) throws MiException{
-        
-        if(date == null){
-            throw new MiException("The date cannot be empty");
-        }
-        
-        if(jobDone == null){
-            throw new MiException("The job done cannot be empty");
-        }
-        
-        if(hours == null){
-            throw new MiException("The hours cannot be empty");
-        }
-                
-        if(price == null){
-            throw new MiException("The price cannot be empty");
-        }
-        
-    }
 }

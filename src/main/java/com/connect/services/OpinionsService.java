@@ -17,7 +17,7 @@ public class OpinionsService {
     
     public void createOpinions(String comments, Double score, Technician technician)throws MiException{
         
-        validation(comments, score, technician);
+        
         
         Opinions opinions = new Opinions();
         opinions.setComments(comments);
@@ -30,7 +30,6 @@ public class OpinionsService {
     
     
     public void modifyOpinions(String id, String comments, Double score, Technician technician)throws MiException{
-        validation(comments, score, technician);
         
         Optional<Opinions> response = opRepo.findById(id);
         if(response.isPresent()){
@@ -55,18 +54,5 @@ public class OpinionsService {
         return null;
     }
     
-    public void validation(String comments, Double score, Technician technician) throws MiException{
-        if(comments.isEmpty() || comments == null){
-            throw new MiException("The comments cannot be empty");
-        }
-        
-        if(score == null){
-            throw new MiException("The score cannot be empty");
-        }
-        
-        if(technician == null){
-            throw new MiException("The technician cannot be empty");
-        }
-    }
-    
+
 }
