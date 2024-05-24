@@ -2,7 +2,10 @@
 package com.connect.entities;
 
 import com.connect.enums.ServicesOffered;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,7 +34,8 @@ public class WorkFinished {
     private Date date;
     
     @NotNull(message = "The service done cannot be empty")
-    @OneToOne
+    @Enumerated(EnumType.STRING)
+    @Column(name = "jobDone")
     private ServicesOffered jobDone;
     
     @NotNull(message = "The hours it took to make the job cannot be null")

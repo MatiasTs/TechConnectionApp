@@ -43,7 +43,7 @@ public class ResidentService {
         resident.setContacto(contact);
         resident.setNIC(NIC);
         resident.setDateOfBirth(dateOfBird);
-        resident.setImage(image);
+        //resident.setImage(image);
         resident.setAddress(address);
         
         residentRepository.save(resident);
@@ -68,7 +68,7 @@ public class ResidentService {
             resident.setContacto(contact);
             resident.setNIC(NIC);
             resident.setDateOfBirth(dateOfBird);
-            resident.setImage(image);
+            //resident.setImage(image);
             resident.setAddress(address);
             residentRepository.save(resident);
         }

@@ -42,7 +42,7 @@ public class TechnicianService {
         technician.setContacto(contact);
         technician.setNIC(NIC);
         technician.setDateOfBirth(dateOfBird);
-        technician.setImage(image);
+        //technician.setImage(image);
         
         technician.setService(service);
         technician.setHourlyRate(hourlyRate);
@@ -75,7 +75,7 @@ public class TechnicianService {
             technician.setContacto(contact);
             technician.setNIC(NIC);
             technician.setDateOfBirth(dateOfBird);
-            technician.setImage(image);
+            //technician.setImage(image);
 
             technician.setService(service);
             technician.setHourlyRate(hourlyRate);

@@ -34,11 +34,11 @@ import lombok.Setter;
 @DiscriminatorValue("USER")
 @Entity
 
-public class User {
+public abstract class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String Id;
+    private String id;
 
     @NotBlank(message = "The name cannot be empty")
     private String name;
@@ -58,9 +58,9 @@ public class User {
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
-    @NotNull(message = "The image cannot be null")
-    @OneToOne
-    private Image image;
+//    @NotNull(message = "The image cannot be null")
+//    @OneToOne
+//    private Image image;
 
     @NotNull(message = "The contact cannot be null")
     @OneToOne

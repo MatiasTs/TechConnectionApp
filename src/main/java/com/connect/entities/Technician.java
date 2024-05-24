@@ -3,6 +3,7 @@ package com.connect.entities;
 
 import com.connect.enums.ServicesOffered;
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -10,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import lombok.Getter;
@@ -19,12 +21,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "TECHNICIAN")
+@DiscriminatorValue("TECHNICIAN")
 @Entity
 public class Technician extends User{
     
-    @GeneratedValue(strategy = GenerationType.UUID)
-    @Id
-    private String id;
     
     @NotNull
     @Enumerated(EnumType.STRING)
