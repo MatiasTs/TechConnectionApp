@@ -91,7 +91,7 @@ public class ResidentService {
     }
     
     public List<Resident> listResidents(){
-        return residentRepository.residentsOrderByUsername();
+        return residentRepository.findAllByOrderByUserNameAsc();
     }
     
    

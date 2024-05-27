@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TechnicianRepository extends JpaRepository<Technician, String>{
     
-    @Query("SELECT t FROM Technician t ORDER BY UserName ASC")
-    List<Technician> techniciansOrderByUserName();
+    List<Technician> findAllByOrderByUserNameAsc();
     
 }

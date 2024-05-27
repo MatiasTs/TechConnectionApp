@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ResidentRepository extends JpaRepository<Resident, String>{
     
-    @Query("SELECT r FROM Resident r ORDER BY r.userName ASC")
-    List<Resident> residentsOrderByUsername();
+    
+    List<Resident> findAllByOrderByUserNameAsc();
     
 }

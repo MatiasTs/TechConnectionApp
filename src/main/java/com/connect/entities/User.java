@@ -68,7 +68,7 @@ public abstract class User {
 
     @NotNull(message = "The rol cannot be null")
     @Enumerated(EnumType.STRING)
-    @Column(name = "rol")
+    @Column(name = "user_rol")
     private Roles rol;
 
 }

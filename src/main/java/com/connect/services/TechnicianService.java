@@ -104,7 +104,7 @@ public class TechnicianService {
     }
     
     public List<Technician> allTechnicianOrderByUserName(){
-        return TechnicianRepository.techniciansOrderByUserName();
+        return TechnicianRepository.findAllByOrderByUserNameAsc();
     }
     
     
