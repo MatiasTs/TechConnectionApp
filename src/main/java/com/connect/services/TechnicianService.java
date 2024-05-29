@@ -27,31 +27,9 @@ public class TechnicianService {
     private UserService userService;
     
     @Transactional
-    public void createTechnician(String name, String password, String confirmPassword, String lastName,String userName,
-            Contact contact, String NIC, Date dateOfBird, Image image, Address address,
-            ServicesOffered service, List<WorkFinished> works, Double hourlyRate) throws MiException{
+    public Technician createTechnician(Technician technician){
         
-        
-        
-        Technician technician = new Technician();
-        
-        technician.setName(name);
-        technician.setPassword(password);
-        technician.setLastName(lastName);
-        technician.setUserName(userName);
-        technician.setContacto(contact);
-        technician.setNIC(NIC);
-        technician.setDateOfBirth(dateOfBird);
-        //technician.setImage(image);
-        
-        technician.setService(service);
-        technician.setHourlyRate(hourlyRate);
-        
-        if(!works.isEmpty()){
-            technician.setWorkFinished(works);
-        }
-        
-        TechnicianRepository.save(technician);
+        return TechnicianRepository.save(technician);
         
     }
     

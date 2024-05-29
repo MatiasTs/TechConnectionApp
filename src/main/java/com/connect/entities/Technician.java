@@ -32,11 +32,11 @@ public class Technician extends User{
     @Column(name = "service")
     private ServicesOffered service;
     
-    @NotNull
+    
     @OneToMany
     private List<WorkFinished> workFinished;
     
-    @NotNull
+    
     @OneToMany
     private List<Opinions> opinions;
     
