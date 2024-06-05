@@ -5,7 +5,7 @@
     xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
     lang="en"
     >
-    <head th:replace="~{layout/head :: head('Professional Register'}">
+    <head th:replace="~{layout/head :: head('Professional Register')}">
         
 <!--        <th:block th:replace="${additionalHeadContent}">
             <link rel="stylesheet" th:href="@{/css/register.css}">
@@ -139,7 +139,13 @@
               >Service:
             </label>
             <div class="col-sm-9 col-md-6 col-lg-8">
-              <input class="form-control" type="text" id="service" name="service" />
+              <select class="form-select" name="service" id="service">
+                <option value="">Selecciona uno</option>
+                        <option th:each="service : ${services}"
+                                th:value="${service}"
+                                th:text="${service}">
+                        </option>
+              </select>
             </div>
           </div>
           <div

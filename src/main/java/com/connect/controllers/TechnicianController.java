@@ -2,9 +2,11 @@
 package com.connect.controllers;
 
 import com.connect.entities.Technician;
+import com.connect.enums.ServicesOffered;
 import com.connect.services.TechnicianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,13 +20,18 @@ public class TechnicianController {
     private TechnicianService techService;
     
     @GetMapping("/register")
-    public String newTechnician(){
+    public String newTechnician(Model modelo){
+         
+        modelo.addAttribute("services", ServicesOffered.values());
+        
         return "register_professional.html";
     }
     
     @PostMapping("/register")
     public String saveTechnician(@ModelAttribute("technician") Technician technician){
-        techService.createTechnician(technician);
+        
+       techService.createTechnician(technician);
+        
         return "redirect:/index";
     }
     
