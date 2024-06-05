@@ -1,5 +1,5 @@
-<head th:fragment="head">
-    <title>TechConnection</title>
+<head th:fragment="head (pageTitle)">
+    <title th:text="${pageTitle}">Title</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link
@@ -8,6 +8,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    
 </head>
 
 
