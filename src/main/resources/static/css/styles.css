@@ -1,0 +1,21 @@
+/*                  REGISTER PAGS               */
+
+.register-body {
+    margin: 0;
+    padding: 0;
+    background: #f0f8ff !important; /* Azul claro */
+    
+}
+
+.register-form {
+    background-color: #ffffff; /* Blanco puro */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-title {
+    color: #003366; /* Azul marino oscuro */
+    font-weight: bold;
+}
+
