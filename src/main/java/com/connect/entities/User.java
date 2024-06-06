@@ -50,7 +50,8 @@ public abstract class User {
     @NotBlank(message = "The password cannot be empty")
     @Size(min = 8, message = "The password must be at least 8 characters long")
     private String password;
-    @NotBlank(message = "The password cannot be empty")
+    
+    @NotBlank(message = "The NIC cannot be empty")
     private String NIC;
 
     @NotNull(message = "The date of birth cannot be empty")
@@ -62,7 +63,7 @@ public abstract class User {
 //    @OneToOne
 //    private Image image;
 
-    @NotNull(message = "The contact cannot be null")
+    //@NotNull(message = "The contact cannot be null")
     @OneToOne
     private Contact contacto;
 

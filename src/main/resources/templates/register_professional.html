@@ -13,8 +13,8 @@
     </head>
     <body class="register-body">
          <div class="container p-4">
-      <h1 class="text-center mt-3 register-title">Register User</h1>
-      <form action="#" class="text-center m-5 p-4 register-body">
+      <h1 class="text-center mt-3 register-title">Register Professional</h1>
+      <form th:action="@{/professional/register}" th:object="${technician}" method="POST" class="text-center m-5 p-4 register-body">
         <div class="row justify-content-center mb-4">
           <div
             class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
@@ -23,7 +23,7 @@
               >Name:
             </label>
             <div class="col-sm-9 col-md-6 col-lg-8">
-              <input class="form-control" type="text" id="name" name="name" />
+              <input class="form-control" type="text" th:field="*{name}" id="name" name="name" required/>
             </div>
           </div>
           <div
@@ -39,7 +39,9 @@
                 class="form-control"
                 type="text"
                 id="lastname"
-                name="lastname"
+                name="lastName"
+                th:field="*{lastname}"
+                required
               />
             </div>
           </div>
@@ -52,7 +54,7 @@
               >Username:
             </label>
             <div class="col-sm-9 col-md-6 col-lg-8">
-              <input class="form-control" type="text" id="username" name="username" />
+              <input class="form-control" type="text" id="username" name="userName" th:field="*{username}" required/>
             </div>
           </div>
           <div
@@ -81,7 +83,7 @@
               >Password:
             </label>
             <div class="col-sm-9 col-md-6 col-lg-8">
-              <input class="form-control" type="password" id="password" name="password" />
+              <input class="form-control" type="password" id="password" name="password" th:field="*{password}" required/>
             </div>
           </div>
           <div
@@ -98,6 +100,7 @@
                 type="password"
                 id="repeatPassword"
                 name="repeatPassword"
+                required
               />
             </div>
           </div>
@@ -110,7 +113,7 @@
               >Date of Bird:
             </label>
             <div class="col-sm-9 col-md-6 col-lg-8">
-              <input class="form-control" type="text" id="DOB" name="DOB" />
+              <input class="form-control" type="text" id="DOB" name="DOB" th:field="*{dateOfBird}" required/>
             </div>
           </div>
           <div
@@ -127,6 +130,8 @@
                 type="text"
                 id="NIC"
                 name="NIC"
+                th:field="*{NIC}"
+                required
               />
             </div>
           </div>
@@ -162,6 +167,7 @@
                 type="text"
                 id="price"
                 name="price"
+                th:field="*{hourlyRate}"
               />
             </div>
           </div>
