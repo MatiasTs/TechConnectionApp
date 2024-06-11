@@ -18,45 +18,16 @@ public class AddressService {
     
     
     @Transactional
-    public void createAddress(String street, String residentNumber, String housingType, String postalCode,
-            Integer floor, String city, String doorNumber, Resident resident) throws MiException {
+    public Address createAddress(Address address) {
         
-        
-        Address address = new Address();
-        
-        address.setStreet(street);
-        address.setResidentNumber(residentNumber);
-        address.setHousingType(housingType);
-        address.setPostalCode(postalCode);
-        address.setFloor(floor);
-        address.setCity(city);
-        address.setDoorNumber(doorNumber);
-        address.setResident(resident);
-        
-        addressRepo.save(address);
+        return addressRepo.save(address);
         
     }
     
     @Transactional
-    public void modifyAddress(String id, String street, String residentNumber, String housingType, String postalCode,
-            Integer floor, String city, String doorNumber, Resident resident) throws MiException {
+    public Address updateAddress(Address address) {
         
-        
-        Optional<Address> response = addressRepo.findById(id);
-        
-        if(response.isPresent()){
-            Address address = response.get();
-            address.setStreet(street);
-            address.setResidentNumber(residentNumber);
-            address.setHousingType(housingType);
-            address.setPostalCode(postalCode);
-            address.setFloor(floor);
-            address.setCity(city);
-            address.setDoorNumber(doorNumber);
-            address.setResident(resident);
-            
-            addressRepo.save(address);
-        }
+        return addressRepo.save(address);
         
     }
     

@@ -18,38 +18,14 @@ public class WorkService {
     private WorkRepository workRepo;
     
     
-    public void createWork(Date date, ServicesOffered jobDone, Double hours, Double price,
-            Technician technician) throws MiException{
+    public WorkFinished createWork(WorkFinished work) {
         
-        
-        WorkFinished work = new WorkFinished();
-        
-        work.setDate(date);
-        work.setHours(hours);
-        work.setPrice(price);
-        work.setTechnician(technician);
-        work.setJobDone(jobDone);
-        workRepo.save(work);
-        
+        return workRepo.save(work);
     }
     
-    
-    public void modifyWork(String id, Date date, ServicesOffered jobDone, Double hours, Double price,
-            Technician technician) throws MiException{
+    public WorkFinished updateWork(WorkFinished work) {
         
-        
-        Optional<WorkFinished> response = workRepo.findById(id);
-        if(response.isPresent()){
-            WorkFinished work = response.get();
-            work.setDate(date);
-            work.setHours(hours);
-            work.setPrice(price);
-            work.setTechnician(technician);
-            work.setJobDone(jobDone);
-            workRepo.save(work);
-            
-        }
-        
+        return workRepo.save(work);
     }
     
     public void deleteWork(String id){

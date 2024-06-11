@@ -16,27 +16,16 @@ public class SocialService {
     private SocialRepository socialRepo;
     
     
-    public void createSocial(String name, String myUserName, Contact contact) throws MiException{
-        validation(name, myUserName, contact);
+    public SocialNetwork SocialNetwork(SocialNetwork social) {
+       
+        return socialRepo.save(social);
         
-        SocialNetwork social = new SocialNetwork();
-        social.setContact(contact);
-        social.setMyUserName(myUserName);
-        social.setName(name);
-        socialRepo.save(social);
     }
     
-    public void modifySocial(String id, String name, String myUserName, Contact contact) throws MiException{
-        validation(name, myUserName, contact);
+    public SocialNetwork updateSocial(SocialNetwork social) {
+       
+        return socialRepo.save(social);
         
-        Optional<SocialNetwork> response = socialRepo.findById(id);
-        if(response.isPresent()){
-            SocialNetwork social = response.get();
-            social.setContact(contact);
-            social.setMyUserName(myUserName);
-            social.setName(name);
-            socialRepo.save(social);
-        }
     }
     
     public void deleteSocial(String id){
@@ -53,17 +42,5 @@ public class SocialService {
         return null;
     }
     
-    public void validation(String name, String myUserName, Contact contact) throws MiException{
-        if(name.isEmpty() || name == null){
-            throw new MiException("The name of the social network cannot be empty");
-        }
-        
-        if(myUserName.isEmpty() || myUserName == null){
-            throw new MiException("The user name cannot be empty");
-        }
-        
-        if(contact == null){
-            throw new MiException("The contact cannot be empty");
-        }
-    }
+    
 }

@@ -18,46 +18,17 @@ public class ContactService {
     private ContactRepository contaRepo;
     
     @Transactional
-    public void createContact(String phoneNumber, String cellphone, String email,
-            List<SocialNetwork> socialNetwork) throws MiException{
+    public Contact createContact(Contact contact){
         
-        Contact contact = new Contact();
-        
-        if(!phoneNumber.isEmpty() && phoneNumber != null){
-            contact.setPhoneNumber(phoneNumber);
-        }
-        
-        if(!cellphone.isEmpty() && cellphone != null){
-            contact.setCellphone(cellphone);
-        }
-        
-        if(!email.isEmpty() && email != null){
-            contact.setEmail(email);
-        }
-        
-        if(socialNetwork != null && socialNetwork.size() > 0){
-            contact.setSocialNetworks(socialNetwork);
-        }
-        
-        contaRepo.save(contact);
+        return contaRepo.save(contact);
         
     }
     
     @Transactional
-    public void modifyContact(String id, String phoneNumber, String cellphone, String email,
-            List<SocialNetwork> socialNetwork) throws MiException{
+    public Contact updateContact(Contact contact){
         
+        return contaRepo.save(contact);
         
-        Optional<Contact> response = contaRepo.findById(id);
-        if(response.isPresent()){
-            Contact contact = response.get();
-            contact.setPhoneNumber(phoneNumber);
-            contact.setCellphone(cellphone);
-            contact.setEmail(email);
-            contact.setSocialNetworks(socialNetwork);
-        
-            contaRepo.save(contact);
-        }
     }
     
     

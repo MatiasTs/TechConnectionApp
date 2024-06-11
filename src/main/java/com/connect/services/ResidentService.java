@@ -29,50 +29,15 @@ public class ResidentService {
     
    
     @Transactional
-    public void createResident(String name, String password, String confirmPassword, String lastName,String userName,
-            Contact contact, String NIC, Date dateOfBird, Image image, Address address) throws MiException{
+    public Resident createResident(Resident resident) {
         
-        
-        
-        Resident resident = new Resident();
-        
-        resident.setName(name);
-        resident.setPassword(password);
-        resident.setLastName(lastName);
-        resident.setUserName(userName);
-        resident.setContacto(contact);
-        resident.setNIC(NIC);
-        resident.setDateOfBirth(dateOfBird);
-        //resident.setImage(image);
-        resident.setAddress(address);
-        
-        residentRepository.save(resident);
-        
+        return residentRepository.save(resident);
     }
     
     @Transactional
-    public void modifyResident(String name, String id,String password, String confirmPassword, String lastName,String userName,
-            Contact contact, String NIC, Date dateOfBird, Image image, Address address) throws MiException{
+    public Resident uptdate(Resident resident) {
         
-        
-        Optional<Resident> response = residentRepository.findById(id);
-        
-        if(response.isPresent()){
-            
-            Resident resident = response.get();
-            
-            resident.setName(name);
-            resident.setPassword(password);
-            resident.setLastName(lastName);
-            resident.setUserName(userName);
-            resident.setContacto(contact);
-            resident.setNIC(NIC);
-            resident.setDateOfBirth(dateOfBird);
-            //resident.setImage(image);
-            resident.setAddress(address);
-            residentRepository.save(resident);
-        }
-         
+        return residentRepository.save(resident);
     }
     
     

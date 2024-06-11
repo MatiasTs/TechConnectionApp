@@ -15,31 +15,17 @@ public class OpinionsService {
     @Autowired
     private OpinionsRepository opRepo;
     
-    public void createOpinions(String comments, Double score, Technician technician)throws MiException{
+    public Opinions createOpinions(Opinions opinions){
         
-        
-        
-        Opinions opinions = new Opinions();
-        opinions.setComments(comments);
-        opinions.setScore(score);
-        opinions.setTechnician(technician);
-        
-        opRepo.save(opinions);
+        return opRepo.save(opinions);
   
     }
     
     
-    public void modifyOpinions(String id, String comments, Double score, Technician technician)throws MiException{
+    public Opinions updateOpinions(Opinions opinions){
         
-        Optional<Opinions> response = opRepo.findById(id);
-        if(response.isPresent()){
-            Opinions opinions = new Opinions();
-            opinions.setComments(comments);
-            opinions.setScore(score);
-            opinions.setTechnician(technician);
-
-            opRepo.save(opinions);
-        }
+        return opRepo.save(opinions);
+  
     }
     
     public void deleteOpinions(String id){
