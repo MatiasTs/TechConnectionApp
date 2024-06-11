@@ -34,7 +34,7 @@ public class TechnicianService {
     }
     
     @Transactional
-    public Technician modifyTechnician(Technician technician) throws MiException{
+    public Technician modifyTechnician(Technician technician){
         
         return TechnicianRepository.save(technician);
     }
