@@ -20,9 +20,10 @@ public class TechnicianController {
     private TechnicianService techService;
     
     @GetMapping("/register")
-    public String newTechnician(Model modelo){
+    public String newTechnician(Model model){
          
-        modelo.addAttribute("services", ServicesOffered.values());
+        model.addAttribute("technician", new Technician());
+        model.addAttribute("services", ServicesOffered.values());
         
         return "register_professional.html";
     }

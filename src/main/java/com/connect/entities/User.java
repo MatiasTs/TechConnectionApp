@@ -43,7 +43,7 @@ public abstract class User {
     @NotBlank(message = "The name cannot be empty")
     private String name;
     @NotBlank(message = "The last name cannot be empty")
-    private String lastName;
+    private String lastname;
     @NotBlank(message = "The username cannot be empty")
     private String userName;
 
@@ -64,8 +64,11 @@ public abstract class User {
 //    private Image image;
 
     //@NotNull(message = "The contact cannot be null")
-    @OneToOne
-    private Contact contacto;
+//    @OneToOne
+//    private Contact contacto;
+    
+    @NotBlank(message = "The telphone cannot be empty")
+    private String phone;
 
     @NotNull(message = "The rol cannot be null")
     @Enumerated(EnumType.STRING)

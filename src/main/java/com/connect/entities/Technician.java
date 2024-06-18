@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
 import lombok.Getter;
@@ -31,6 +32,9 @@ public class Technician extends User{
     @Enumerated(EnumType.STRING)
     @Column(name = "service")
     private ServicesOffered service;
+    
+    @NotBlank(message = "The address cannot be null")
+    private String address;
     
     
     @OneToMany
