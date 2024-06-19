@@ -3,7 +3,7 @@
 .register-body {
     margin: 0;
     padding: 0;
-    background: #f0f8ff !important; /* Azul claro */
+    background: #f0f8ff; /* Azul claro */
     
 }
 
@@ -17,5 +17,10 @@
 .register-title {
     color: #003366; /* Azul marino oscuro */
     font-weight: bold;
+}
+
+.submit-button{
+    background-color: #003366;
+    color: white;
 }
 

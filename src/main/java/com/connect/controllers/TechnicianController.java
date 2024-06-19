@@ -2,6 +2,7 @@
 package com.connect.controllers;
 
 import com.connect.entities.Technician;
+import com.connect.enums.Roles;
 import com.connect.enums.ServicesOffered;
 import com.connect.services.TechnicianService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,10 @@ public class TechnicianController {
     @PostMapping("/register")
     public String saveTechnician(@ModelAttribute("technician") Technician technician){
         
+       technician.setRol(Roles.TECHNICIAN);
        techService.createTechnician(technician);
         
-        return "redirect:/index";
+        return "redirect:/";
     }
     
 }
