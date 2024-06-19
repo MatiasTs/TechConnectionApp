@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+    lang="en"
+    >
+    <head th:replace="~{layout/head :: head('Resident Register')}">
+        
+    </head>
+    <body class="register-body">
+         <div class="container p-4">
+      <h1 class="text-center mt-3 register-title">Register Resident</h1>
+      <form th:action="@{/resident/register}" th:object="${resident}" method="POST" class="text-center m-5 p-4 register-body">
+        <div class="row justify-content-center mb-4">
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label class="col-sm-3 col-lg-3 col-form-label text-md-end text-start" for="name"
+              >Name:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input class="form-control" type="text" th:field="*{name}" id="name" name="name" required/>
+            </div>
+          </div>
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-lg-0"
+          >
+            <label
+              class="col-sm-3 col-lg-3 col-form-label text-md-end text-start"
+              for="lastname"
+              >Lastname:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input
+                class="form-control"
+                type="text"
+                id="lastname"
+                name="lastName"
+                th:field="*{lastname}"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label class="col-sm-3 col-lg-3 col-form-label text-md-end text-start" for="username"
+              >Username:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input class="form-control" type="text" id="username" name="userName" th:field="*{userName}" required/>
+            </div>
+          </div>
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-lg-0"
+          >
+            <label
+              class="col-sm-3 col-lg-3 col-form-label text-md-end text-start"
+              for="email"
+              >Email:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label class="col-sm-3 col-lg-3 col-form-label text-md-end text-start" for="password"
+              >Password:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input class="form-control" type="password" id="password" name="password" th:field="*{password}" required/>
+            </div>
+          </div>
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-lg-0"
+          >
+            <label
+              class="col-sm-3 col-lg-3 col-form-label text-md-end text-start"
+              for="repeatPassword"
+              >Repeat Password:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input
+                class="form-control"
+                type="password"
+                id="repeatPassword"
+                name="repeatPassword"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4">
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label class="col-sm-3 col-lg-3 col-form-label text-md-end text-start" for="DOB"
+              >Date of Bird:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input class="form-control" type="text" id="DOB" name="DOB" th:field="*{dateOfBirth}" required/>
+            </div>
+          </div>
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label
+              class="col-sm-3 col-lg-3 col-form-label text-md-end text-start"
+              for="NIC"
+              >NIC:
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input
+                class="form-control"
+                type="text"
+                id="NIC"
+                name="NIC"
+                th:field="*{NIC}"
+                required
+              />
+            </div>
+          </div>
+        </div>
+          
+          <div class="row justify-content-center mb-4">
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
+          >
+            <label class="col-sm-3 col-lg-3 col-form-label text-md-end text-start" for="phone"
+              >Phone number
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input class="form-control" type="text" th:field="*{phone}" id="phone" name="phone" required/>
+            </div>
+          </div>
+          <div
+            class="form-group col-12 col-lg-6 row align-items-center mb-lg-0"
+          >
+            <label
+              class="col-sm-3 col-lg-3 col-form-label text-md-end text-start"
+              for="address"
+              >Address
+            </label>
+            <div class="col-sm-9 col-md-6 col-lg-8">
+              <input
+                class="form-control"
+                type="text"
+                id="address"
+                name="address"
+                th:field="*{address}"
+                required
+              />
+            </div>
+          </div>
+        </div>
+          
+        
+          <input type="submit" name="button" id="button" class="btn submit-button mt-3" value="Register">
+      </form>
+    </div>
+    </body>
+</html>
+

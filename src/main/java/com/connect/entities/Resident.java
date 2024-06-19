@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import lombok.Getter;
@@ -24,7 +25,10 @@ public class Resident extends User{
     
     
     
-    @NotNull
-    @OneToOne
-    private Address address;
+//    @NotNull
+//    @OneToOne
+//    private Address address;
+    
+    @NotBlank(message = "The address cannot be null")
+    private String address;
 }
