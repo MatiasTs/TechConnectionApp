@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Lob;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -66,6 +67,9 @@ public abstract class User {
     //@NotNull(message = "The contact cannot be null")
 //    @OneToOne
 //    private Contact contacto;
+    
+    @Lob
+    private byte[] image;
     
     @NotBlank(message = "The telphone cannot be empty")
     private String phone;

@@ -14,7 +14,7 @@
     <body class="register-body">
          <div class="container p-4">
       <h1 class="text-center mt-3 register-title">Register Professional</h1>
-      <form th:action="@{/professional/register}" th:object="${technician}" method="POST" class="text-center m-5 p-4 register-body">
+      <form th:action="@{/professional/register}" th:object="${technician}" method="POST" enctype="multipart/form-data" class="text-center m-5 p-4 register-body">
         <div class="row justify-content-center mb-4">
           <div
             class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
@@ -211,9 +211,13 @@
               <h2>Drag and drop <br>a <br>Profile Picture</h2>
               <span>Or</span>
               <button>Select a file</button>
-              <input type="file" name="" id="input-file" hidden>
+              <input type="file" name="image" id="input-file" hidden>
           </div>
           <div id="preview"></div>
+        </div>
+          
+          <div th:if="${errorMessage}" class="alert alert-danger">
+            <p th:text="${errorMessage}"></p>
         </div>
           
           <input type="submit" name="button" id="button" class="btn submit-button mt-3" value="Register">

@@ -5,13 +5,18 @@ import com.connect.entities.Technician;
 import com.connect.enums.Roles;
 import com.connect.enums.ServicesOffered;
 import com.connect.services.TechnicianService;
+import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/professional")
@@ -30,12 +35,21 @@ public class TechnicianController {
     }
     
     @PostMapping("/register")
-    public String saveTechnician(@ModelAttribute("technician") Technician technician){
-        
-       technician.setRol(Roles.TECHNICIAN);
-       techService.createTechnician(technician);
-        
-        return "redirect:/";
+    public String saveTechnician(@ModelAttribute("technician") Technician technician, @RequestParam("image") MultipartFile image, Model model) {
+        try {
+            if (!image.isEmpty()) {
+                byte[] imageBytes = image.getBytes(); // Explicit conversion
+                technician.setImage(imageBytes);
+            }
+
+            technician.setRol(Roles.TECHNICIAN);
+            techService.createTechnician(technician);
+        } catch (IOException e) {
+            model.addAttribute("errorMessage", "Error when registering the professional");
+            return "register_professional.html"; 
+        }
+
+        return "redirect:/"; 
     }
-    
 }
+    
