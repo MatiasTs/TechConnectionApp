@@ -17,6 +17,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.Transient;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -25,6 +26,7 @@ import java.util.Date;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -60,17 +62,8 @@ public abstract class User {
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
-//    @NotNull(message = "The image cannot be null")
-    
-//    @OneToOne
-//    private Image image;
-
-    //@NotNull(message = "The contact cannot be null")
-//    @OneToOne
-//    private Contact contacto;
-    
-    //@Lob
-    //private byte[] image;
+    @Transient
+    private MultipartFile image;
     
     @NotBlank(message = "The telphone cannot be empty")
     private String phone;
