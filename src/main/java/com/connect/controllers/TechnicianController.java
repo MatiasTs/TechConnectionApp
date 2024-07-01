@@ -35,19 +35,12 @@ public class TechnicianController {
     }
     
     @PostMapping("/register")
-    public String saveTechnician(@ModelAttribute("technician") Technician technician, @RequestParam("image") MultipartFile image, Model model) {
-        try {
-            if (!image.isEmpty()) {
-                byte[] imageBytes = image.getBytes(); // Explicit conversion
-                technician.setImage(imageBytes);
-            }
+    public String saveTechnician(@ModelAttribute("technician") Technician technician, MultipartFile image, Model model) {
+        
 
-            technician.setRol(Roles.TECHNICIAN);
-            techService.createTechnician(technician);
-        } catch (IOException e) {
-            model.addAttribute("errorMessage", "Error when registering the professional");
-            return "register_professional.html"; 
-        }
+        technician.setRol(Roles.TECHNICIAN);
+        techService.createTechnician(image, technician);
+        
 
         return "redirect:/"; 
     }

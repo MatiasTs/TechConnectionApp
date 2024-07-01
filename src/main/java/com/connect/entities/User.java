@@ -61,15 +61,16 @@ public abstract class User {
     private Date dateOfBirth;
 
 //    @NotNull(message = "The image cannot be null")
-//    @OneToOne
-//    private Image image;
+    
+    @OneToOne
+    private Image image;
 
     //@NotNull(message = "The contact cannot be null")
 //    @OneToOne
 //    private Contact contacto;
     
-    @Lob
-    private byte[] image;
+    //@Lob
+    //private byte[] image;
     
     @NotBlank(message = "The telphone cannot be empty")
     private String phone;

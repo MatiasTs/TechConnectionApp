@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.ArrayUtils;
 
 @Service
@@ -26,8 +27,16 @@ public class TechnicianService {
     @Autowired
     private UserService userService;
     
+    @Autowired
+    private ImageService imageService;
+    
     @Transactional
-    public Technician createTechnician(Technician technician){
+    public Technician createTechnician(MultipartFile archivo, Technician technician){
+        
+        Image image = imageService.guardar(archivo);
+        
+        technician.setImage(image);
+        
         
         return TechnicianRepository.save(technician);
         

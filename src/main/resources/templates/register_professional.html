@@ -206,7 +206,15 @@
           </div>
         </div>
           
-         <div>
+        
+          
+        <div class="col-md-6">
+            <label for="imagen">Foto de Perfil: </label>
+            <input type="file" id="imagen" name="image" class="form-control">
+        </div>
+         
+          
+<!--        <div>
           <div class="drop-area">
               <h2>Drag and drop <br>a <br>Profile Picture</h2>
               <span>Or</span>
@@ -214,15 +222,11 @@
               <input type="file" name="image" id="input-file" hidden>
           </div>
           <div id="preview"></div>
-        </div>
-          
-          <div th:if="${errorMessage}" class="alert alert-danger">
-            <p th:text="${errorMessage}"></p>
-        </div>
+        </div>-->
           
           <input type="submit" name="button" id="button" class="btn submit-button mt-3" value="Register">
       </form>
     </div>
-        <script src="../js/Drag_and_Drop.js"></script>
+        <!--<script src="../js/Drag_and_Drop.js"></script>-->
     </body>
 </html>
