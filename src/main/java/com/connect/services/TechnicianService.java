@@ -3,7 +3,6 @@ package com.connect.services;
 
 import com.connect.entities.Address;
 import com.connect.entities.Contact;
-import com.connect.entities.Image;
 import com.connect.entities.Technician;
 import com.connect.entities.WorkFinished;
 import com.connect.enums.ServicesOffered;
@@ -27,20 +26,14 @@ public class TechnicianService {
     @Autowired
     private UserService userService;
     
-//    @Autowired
-//    private ImageService imageService;
     
-//    @Transactional
-//    public Technician createTechnician(MultipartFile archivo, Technician technician){
-//        
-//        Image image = imageService.guardar(archivo);
-//        
-//        technician.setImage(image);
-//        
-//        
-//        return TechnicianRepository.save(technician);
-//        
-//    }
+    @Transactional
+    public Technician createTechnician(Technician technician){
+        
+   
+        return TechnicianRepository.save(technician);
+        
+    }
     
     @Transactional
     public Technician modifyTechnician(Technician technician){

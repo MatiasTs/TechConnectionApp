@@ -3,7 +3,7 @@ package com.connect.services;
 
 import com.connect.entities.Address;
 import com.connect.entities.Contact;
-import com.connect.entities.Image;
+
 import com.connect.entities.Resident;
 import com.connect.repositories.ResidentRepository;
 import com.connect.repositories.UserRepository;

@@ -25,24 +25,23 @@ public class TechnicianController {
     @Autowired
     private TechnicianService techService;
     
-//    @GetMapping("/register")
-//    public String newTechnician(Model model){
-//         
-//        model.addAttribute("technician", new Technician());
-//        model.addAttribute("services", ServicesOffered.values());
-//        
-//        return "register_professional.html";
-//    }
-//    
-//    @PostMapping("/register")
-//    public String saveTechnician(@ModelAttribute("technician") Technician technician, MultipartFile image, Model model) {
-//        
-//
-//        technician.setRol(Roles.TECHNICIAN);
-//        techService.createTechnician(image, technician);
-//        
-//
-//        return "redirect:/"; 
-//    }
+    @GetMapping("/register")
+    public String newTechnician(Model model){
+         
+        model.addAttribute("technician", new Technician());
+        model.addAttribute("services", ServicesOffered.values());
+        
+        return "register_professional.html";
+    }
+    
+    @PostMapping("/register")
+    public String saveTechnician(@ModelAttribute("technician") Technician technician, Model model) {
+        
+
+        technician.setRol(Roles.TECHNICIAN);
+        
+
+        return "redirect:/"; 
+    }
 }
     
