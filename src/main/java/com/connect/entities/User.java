@@ -61,6 +61,8 @@ public abstract class User {
     @Past(message = "The date of birth must be a date in the past")
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
+    
+    private String rutaPortada;
 
     @Transient
     private MultipartFile image;

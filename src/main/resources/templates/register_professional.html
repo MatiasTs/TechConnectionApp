@@ -208,9 +208,9 @@
           
         
           
-        <div class="col-md-6">
-            <label for="imagen">Foto de Perfil: </label>
-            <input type="file" id="imagen" name="image" class="form-control">
+        <div class="col-md-6 offset-md-3">
+            <label for="imagen" class="form-label fs-4">Foto de Perfil: </label>
+            <input type="file" id="imagen" name="image" th:field="*{image}" class="form-control">
         </div>
          
           
@@ -219,7 +219,7 @@
               <h2>Drag and drop <br>a <br>Profile Picture</h2>
               <span>Or</span>
               <button>Select a file</button>
-              <input type="file" name="image" id="input-file" hidden>
+              <input type="file" name="image" id="input-file" th:field="*{image}" hidden>
           </div>
           <div id="preview"></div>
         </div>-->
@@ -227,6 +227,6 @@
           <input type="submit" name="button" id="button" class="btn submit-button mt-3" value="Register">
       </form>
     </div>
-        <!--<script src="../js/Drag_and_Drop.js"></script>-->
+        <script src="../js/Drag_and_Drop.js"></script>
     </body>
 </html>
