@@ -62,8 +62,8 @@ public abstract class User {
 
 //    @NotNull(message = "The image cannot be null")
     
-    @OneToOne
-    private Image image;
+//    @OneToOne
+//    private Image image;
 
     //@NotNull(message = "The contact cannot be null")
 //    @OneToOne

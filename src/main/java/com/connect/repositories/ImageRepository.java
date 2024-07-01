@@ -1,10 +1,10 @@
-package com.connect.repositories;
-
-import com.connect.entities.Image;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-@Repository
-public interface ImageRepository extends JpaRepository<Image, String>{
-    
-}
+//package com.connect.repositories;
+//
+//import com.connect.entities.Image;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.stereotype.Repository;
+//
+//@Repository
+//public interface ImageRepository extends JpaRepository<Image, String>{
+//    
+//}

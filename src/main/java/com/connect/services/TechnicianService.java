@@ -27,20 +27,20 @@ public class TechnicianService {
     @Autowired
     private UserService userService;
     
-    @Autowired
-    private ImageService imageService;
+//    @Autowired
+//    private ImageService imageService;
     
-    @Transactional
-    public Technician createTechnician(MultipartFile archivo, Technician technician){
-        
-        Image image = imageService.guardar(archivo);
-        
-        technician.setImage(image);
-        
-        
-        return TechnicianRepository.save(technician);
-        
-    }
+//    @Transactional
+//    public Technician createTechnician(MultipartFile archivo, Technician technician){
+//        
+//        Image image = imageService.guardar(archivo);
+//        
+//        technician.setImage(image);
+//        
+//        
+//        return TechnicianRepository.save(technician);
+//        
+//    }
     
     @Transactional
     public Technician modifyTechnician(Technician technician){

@@ -21,8 +21,9 @@ public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String mime;
-    private String nombre;
-    @Lob
-    @Basic(fetch = FetchType.LAZY)
-    private byte[] contenido;}
+//    private String mime;
+//    private String nombre;
+//    @Lob
+//    @Basic(fetch = FetchType.LAZY)
+//    private byte[] contenido;
+}
