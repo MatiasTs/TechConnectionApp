@@ -42,12 +42,6 @@ public class TechnicianController {
                     .addObject("technician", new Technician())
                     .addObject("services",services);
         
-                
-         
-//        model.addAttribute("technician", new Technician());
-//        model.addAttribute("services", ServicesOffered.values());
-//        
-//        return "register_professional.html";
     }
     
     @PostMapping("/register")
