@@ -57,9 +57,9 @@ public class TechnicianController {
         if (!technician.getImage().isEmpty()){
             
             String imageRoute = storageService.storageFile(technician.getImage());
-            technician.setRutaPortada(imageRoute);
+            technician.setImageRoute(imageRoute);
         }else{
-            technician.setRutaPortada(null);
+            technician.setImageRoute(null);
         }
             
 
@@ -70,5 +70,7 @@ public class TechnicianController {
 
         return new ModelAndView("redirect:/"); 
     }
+    
+    
 }
     

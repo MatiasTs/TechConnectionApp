@@ -62,12 +62,18 @@ public class AdminController {
         technicianUP.setUserName(technician.getUserName());
         
         if(!technician.getImage().isEmpty()){
-            storageService.deleteFile(technicianUP.getRutaPortada());
+            storageService.deleteFile(technicianUP.getImageRoute());
             String routeFile = storageService.storageFile(technician.getImage());
-            technicianUP.setRutaPortada(routeFile);
+            technicianUP.setImageRoute(routeFile);
         }
         
         return new ModelAndView("redirect:/"); 
+    }
+    
+    @PostMapping("/professional/{id}/delete")
+    public String deleteTechnician(@PathVariable String id){
+        techService.technicianDelete(id);
+        return "redirect:/";
     }
     
 }
