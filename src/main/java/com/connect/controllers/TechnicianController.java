@@ -50,7 +50,7 @@ public class TechnicianController {
         if (bindingResult.hasErrors()){
             ServicesOffered[] services = ServicesOffered.values();
             return new ModelAndView("register_professional.html")
-                    .addObject("technician", new Technician())
+                    .addObject("technician", technician)
                     .addObject("services",services);
         }
         

@@ -62,7 +62,7 @@ public abstract class User {
     @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
     
-    private String rutaPortada;
+    private String imageRoute;
 
     @Transient
     private MultipartFile image;

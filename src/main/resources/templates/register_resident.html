@@ -11,7 +11,7 @@
     <body class="register-body">
          <div class="container p-4">
       <h1 class="text-center mt-3 register-title">Register Resident</h1>
-      <form th:action="@{/resident/register}" th:object="${resident}" method="POST" class="text-center m-5 p-4 register-body">
+      <form th:action="@{/resident/register}" th:object="${resident}" id="submitForm" method="POST" enctype="multipart/form-data" class="text-center m-5 p-4 register-body">
         <div class="row justify-content-center mb-4">
           <div
             class="form-group col-12 col-lg-6 row align-items-center mb-4 mb-lg-0"
@@ -166,10 +166,21 @@
           </div>
         </div>
           
-        
+        <div>
+          <div class="drop-area">
+              <h2>Drag and drop <br>a <br>Profile Picture</h2>
+              <span>Or</span>
+              <button type="button" id="select-button">Select a file</button>
+              <input type="file" name="image" id="input-file" th:field="*{image}" hidden>
+          </div>
+          <div id="preview"></div>
+        </div>
+          
+          
           <input type="submit" name="button" id="button" class="btn submit-button mt-3" value="Register">
       </form>
     </div>
+        <script src="../js/Drag_and_Drop.js"></script>
     </body>
 </html>
 
